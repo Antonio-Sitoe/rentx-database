@@ -1,17 +1,21 @@
 import { View, Text } from "react-native";
-import React from "react";
+import React, { memo } from "react";
 
 interface ITemProps {
   data: {
+    id: number;
     name: string;
     likes: number;
   };
 }
 
-export const Friend = ({ data }: ITemProps) => {
+const FriendComponent = ({ data }: ITemProps) => {
   return (
     <Text>
       {data.name} - Likes: {data.likes}
     </Text>
   );
 };
+export const Friend = memo(FriendComponent, (previewProps, nextProps) => {
+  return Object.is(previewProps.data.id, nextProps.data.id);
+});

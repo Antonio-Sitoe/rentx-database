@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { Friend } from "./Friend";
 interface Props {
   data: {
@@ -9,11 +9,11 @@ interface Props {
 }
 export function FriendList({ data }: Props) {
   return (
-    <View className="mt-[30]">
+    <ScrollView className="mt-[30]">
       <Text>Resultado:</Text>
       {data.map((friend) => {
         return <Friend data={friend} key={friend.id} />;
       })}
-    </View>
+    </ScrollView>
   );
 }

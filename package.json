@@ -6,7 +6,8 @@
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "api": "json-server ./server.js --host 192.168.18.37 --port 3333 --delay 700"
   },
   "dependencies": {
     "@types/react": "~18.0.27",
@@ -16,6 +17,7 @@
     "json-server": "^0.17.3",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
+    "react-devtools": "^4.27.6",
     "react-native": "0.71.6",
     "typescript": "^4.9.4"
   },
