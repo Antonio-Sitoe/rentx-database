@@ -10,14 +10,16 @@ export function Home() {
     fetch("http:192.168.18.37:3333/friends?q=" + name)
       .then((r) => r.json())
       .then((json) => {
-        console.clear();
         console.log(json);
         setFriends(json);
       });
   }
+  function handleFallow() {
+    console.log("fallow");
+  }
 
   return (
-    <View className="flex-1 px-10 pb-10 bg-slate-100 decoration-white">
+    <View className="flex-1 px-10 pb-10 bg-slate-100 decoration-white ">
       <Text className="mt-[100] font-bold text-base">Amigos</Text>
       <TextInput
         value={name}
@@ -27,7 +29,7 @@ export function Home() {
       />
       <Button title="Buscar" onPress={handleSearch} />
 
-      {frinds && <FriendList data={frinds} />}
+      {frinds && <FriendList fallow={handleFallow} data={frinds} />}
     </View>
   );
 }
